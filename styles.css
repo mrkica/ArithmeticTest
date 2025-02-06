@@ -23,7 +23,10 @@ body {
 #testArea {
     margin-top: 20px;
 }
-
+.wrong-answer {
+    background-color: red;
+    transition: background-color 0.5s;
+}
 #feedback {
     margin-top: 10px;
     font-weight: bold;
