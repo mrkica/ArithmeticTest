@@ -64,6 +64,10 @@ function checkAnswer() {
         currentNumber = correctAnswer;
     } else {
         document.getElementById('feedback').textContent = `Incorrect! The correct answer was ${correctAnswer}.`;
+        document.body.classList.add('wrong-answer');
+        setTimeout(() => {
+            document.body.classList.remove('wrong-answer');
+        }, 500); // Flash red for 500ms
     }
 
     askQuestion();
@@ -72,6 +76,6 @@ function checkAnswer() {
 function endTest() {
     clearInterval(metronome);
     document.getElementById('testArea').classList.add('hidden');
-    document.getElementById('feedback').textContent = 'Test ended!';
+    document.getElementById('feedback').textContent = `Test ended! The last number you reached was ${currentNumber}.`;
     document.getElementById('timer').textContent = '';
 }
