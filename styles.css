@@ -40,3 +40,8 @@ body {
     background-color: red;
     transition: background-color 0.5s;
 }
+.end-feedback {
+    font-size: 1.2em;
+    color: red;
+    font-weight: bold;
+}
