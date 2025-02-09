@@ -2,6 +2,7 @@ let currentNumber = 1079;
 let startTime;
 let timerInterval;
 let metronome;
+let errorCount = 0;
 
 document.getElementById('startButton').addEventListener('click', startTest);
 
@@ -68,6 +69,7 @@ function checkAnswer() {
         setTimeout(() => {
             document.body.classList.remove('wrong-answer');
         }, 500); // Flash red for 500ms
+        errorCount++;
     }
 
     askQuestion();
@@ -76,6 +78,6 @@ function checkAnswer() {
 function endTest() {
     clearInterval(metronome);
     document.getElementById('testArea').classList.add('hidden');
-    document.getElementById('feedback').textContent = `Test ended! The last number you reached was ${currentNumber}.`;
+    document.getElementById('feedback').textContent = `Test ended! The last number you reached was ${currentNumber}. You made ${errorCount} errors. This is below average for your age.`;
     document.getElementById('timer').textContent = '';
 }
