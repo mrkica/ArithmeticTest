@@ -74,10 +74,11 @@ function checkAnswer() {
 
     askQuestion();
 }
-
 function endTest() {
     clearInterval(metronome);
     document.getElementById('testArea').classList.add('hidden');
-    document.getElementById('feedback').textContent = `Test ended! The last number you reached was ${currentNumber}. You made ${errorCount} errors. This is below average for your age.`;
+    const feedbackElement = document.getElementById('feedback');
+    feedbackElement.textContent = `Test ended! The last number you reached was ${currentNumber}. You made ${errorCount} errors. This is below average for your age.`;
+    feedbackElement.classList.add('end-feedback');
     document.getElementById('timer').textContent = '';
 }
