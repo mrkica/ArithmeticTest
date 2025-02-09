@@ -36,3 +36,7 @@ body {
     margin-top: 20px;
     font-size: 1.2em;
 }
+.wrong-answer {
+    background-color: red;
+    transition: background-color 0.5s;
+}
